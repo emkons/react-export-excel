@@ -216,6 +216,10 @@ const excelSheetFromAoA = (data) => {
                 cell.t = "s";
             }
 
+            if (cell.v === null) {
+                continue;
+            }
+
             ws[cellRef] = cell;
         }
     }
