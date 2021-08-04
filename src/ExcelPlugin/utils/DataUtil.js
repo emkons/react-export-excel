@@ -208,6 +208,9 @@ const excelSheetFromAoA = (data) => {
                 cell.t = "n";
                 cell.z = XLSX.SSF._table[14];
                 cell.v = dateToNumber(cell.v);
+            } else if (typeof cell.v === "object") {
+                cell.v = cell.v.value;
+                cell.s = cell.v.style;
             } else {
                 cell.t = "s";
             }

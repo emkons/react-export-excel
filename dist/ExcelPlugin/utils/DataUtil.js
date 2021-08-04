@@ -218,6 +218,9 @@ var excelSheetFromAoA = function excelSheetFromAoA(data) {
                 cell.t = "n";
                 cell.z = _xlsx2.default.SSF._table[14];
                 cell.v = dateToNumber(cell.v);
+            } else if (_typeof(cell.v) === "object") {
+                cell.v = cell.v.value;
+                cell.s = cell.v.style;
             } else {
                 cell.t = "s";
             }
