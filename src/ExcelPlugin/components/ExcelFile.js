@@ -105,7 +105,7 @@ class ExcelFile extends React.Component {
     const fileName = this.getFileName();
     const wbout = XLSX.write(wb, {
       bookType: fileExtension,
-      bookSST: true,
+      bookSST: false,
       type: "binary"
     });
 

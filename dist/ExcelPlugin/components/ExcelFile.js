@@ -103,7 +103,7 @@ var ExcelFile = function (_React$Component) {
       var fileName = this.getFileName();
       var wbout = _xlsx2.default.write(wb, {
         bookType: fileExtension,
-        bookSST: true,
+        bookSST: false,
         type: "binary"
       });
 
