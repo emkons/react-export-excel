@@ -103,19 +103,8 @@ class ExcelFile extends React.Component {
 
     const fileExtension = this.getFileExtension();
     const fileName = this.getFileName();
-    const wbout = XLSX.write(wb, {
-      bookType: fileExtension,
-      bookSST: false,
-      type: "binary"
-    });
-
-    saveAs(
-      new Blob([strToArrBuffer(wbout)], {
-        type:
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-      }),
-      fileName
-    );
+    var wopts = { bookType:'xlsx', bookSST:true, type:'array' };
+    XLSX.writeFile(wb, fileName, wopts);
   }
 
   getFileName() {

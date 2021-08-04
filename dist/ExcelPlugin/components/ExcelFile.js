@@ -101,15 +101,8 @@ var ExcelFile = function (_React$Component) {
 
       var fileExtension = this.getFileExtension();
       var fileName = this.getFileName();
-      var wbout = _xlsx2.default.write(wb, {
-        bookType: fileExtension,
-        bookSST: false,
-        type: "binary"
-      });
-
-      (0, _fileSaver.saveAs)(new Blob([(0, _DataUtil.strToArrBuffer)(wbout)], {
-        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-      }), fileName);
+      var wopts = { bookType: 'xlsx', bookSST: true, type: 'array' };
+      _xlsx2.default.writeFile(wb, fileName, wopts);
     }
   }, {
     key: "getFileName",
